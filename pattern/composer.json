@@ -1,0 +1,28 @@
+{
+    "name": "zylo/pattern",
+    "description": "Create a Repositoryies with artisan command",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ozan Akduman",
+            "email": "akduman.ozann@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Zylo\\Pattern\\": "src/"
+        }
+    },
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "zylo\\pattern\\ZyloServiceProvider"
+            ]
+         
+        }
+    }
+
+}
