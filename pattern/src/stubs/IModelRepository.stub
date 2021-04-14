@@ -1,0 +1,8 @@
+<?php
+namespace Zylo\Pattern\App\Interfaces;
+
+
+interface I{{model}}Repository
+{
+  
+}

@@ -1,0 +1,50 @@
+<?php
+
+namespace Zylo\Pattern\App\Controllers\API;
+
+use Zylo\Pattern\App\Models\{{model}};
+use zylo\Pattern\App\Request\{{model}}RequestStore;
+
+use Zylo\Pattern\App\Repositories\{{model}}Repository;
+use Zylo\Pattern\App\Controllers\StabilityController;
+use Illuminate\Http\Request;
+
+class {{model}}Controller extends StabilityController
+{
+
+    public function __construct()
+    {
+       $this->Repository = new {{model}}Repository(new {{model}}());
+    }
+
+
+    public function index()
+    {   
+       return $this->api_Response(new {{model}}Collection($this->Repository->ListAll()));
+    }
+
+
+    public function store({{model}}RequestStore $request)
+    {
+       return $this->api_Response($this->Repository->create($request->all()),201);
+    }
+
+
+    public function show($id)
+    {     
+      return $this->api_Response(new {{model}}Resource($this->Repository->find($id)));
+    }
+
+
+   public function update(PostRequestStore $input, $id)
+    {
+         return $this->api_Response($this->Repository->update($id,$input->all()));
+    }
+
+
+
+    public function destroy($id)
+    {
+         return $this->api_Response($this->Repository->remove($id));
+    }
+}

@@ -1,0 +1,17 @@
+<?php
+
+namespace Zylo\Pattern\App\Repositories;
+
+use Zylo\Pattern\App\Interfaces\I{{model}}Repository;
+use Zylo\Pattern\App\Models\{{model}};
+use Illuminate\Support\Collection;
+
+class {{model}}Repository extends BaseRepository implements I{{model}}Repository
+{
+
+    public function __construct({{model}} $model)
+    {
+        parent::__construct($model);
+    }
+
+}

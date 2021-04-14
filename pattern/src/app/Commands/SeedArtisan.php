@@ -1,21 +1,19 @@
 <?php
 
-namespace Zylo\Pattern\Commands;
 
-use Illuminate\Console\Command;
+namespace Zylo\Pattern\App\Commands;
+use Zylo\Pattern\App\Commands\BaseArtisan;
+use Zylo\Pattern\Database\Seeders\DatabaseSeeder;
 
-class TestCommand2 extends Command
+class SeedArtisan extends BaseArtisan
 {
-    public function path()
-    {
-        return __DIR__;
-    }
+
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name2';
+    protected $signature = 'command:Seed';
 
     /**
      * The console command description.
@@ -30,9 +28,11 @@ class TestCommand2 extends Command
      * @return void
      */
     public function __construct()
-    {
+    {       
         parent::__construct();
     }
+
+
 
     /**
      * Execute the console command.
@@ -41,7 +41,10 @@ class TestCommand2 extends Command
      */
     public function handle()
     {
-        echo "command name 222222";
+      //  $database=new DatabaseSeeder();
+        $this->info('Seeding is processing');
+     //   $database->run();  
+
         return 0;
     }
 }

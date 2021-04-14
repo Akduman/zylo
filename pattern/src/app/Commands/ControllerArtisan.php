@@ -1,21 +1,23 @@
 <?php
 
-namespace Zylo\Pattern\Commands;
+namespace Zylo\Pattern\App\Commands;
 
 use Illuminate\Console\Command;
 
-class TestCommand2 extends Command
+class ControllerArtisan extends BaseArtisan
 {
-    public function path()
-    {
-        return __DIR__;
-    }
+
+    protected $stubs=[
+        "packages\zylo\pattern\src\stubs\Controller.model.api.stub"
+    ];
+
+    protected $old_params=[0=>'{{model}}'];
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name2';
+    protected $signature = 'command:Controller {name}';
 
     /**
      * The console command description.
@@ -41,7 +43,12 @@ class TestCommand2 extends Command
      */
     public function handle()
     {
-        echo "command name 222222";
+        $result=$this->create_file($this->controller_path,"{$this->argument('name')}Controller");
+        if ($result!=false) 
+        {
+           $this->swap_information($result,$this->stubs[0],$this->old_params,$this->ConvertNewParams());
+        }
+
         return 0;
     }
 }
