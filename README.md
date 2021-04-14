@@ -6,4 +6,4 @@ komutu ile içerisi boş gelen resource veri tabanından kolonları çekerek ger
 
 ![image](https://user-images.githubusercontent.com/67479334/114730026-2c84b480-9d49-11eb-860a-8bc2d610c3a7.png)
 
-Bir sonraki aşama ise veri tabanındaki tabloların ilişkeleri dahilinde sorguları ve ilişkileri "generic" yapıda oluşturarak sadece kod üzerindne edit yaparak proje yapım sürersini düşürmek.
+Bir sonraki aşama ise veri tabanındaki tabloların ilişkeleri dahil olmak üzere "generic" yapıda fonksiyonlar oluşturarak sadece kod üzerinden edit yaparak proje yapım sürersini düşürmek.
